@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>N R Jewellers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="N R Jewellers, UTC Millennium Plaza, Shalimar Garden Extension II, Sahibabad. Gold necklace sets, rings, earrings, bangles, mangalsutra and pendants since 2005.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* Layout: wine-silk hero with the animated logo, scrolling collections band, ivory collections, wine story + visit. Colours come from the NR logo. */
+:root{--wine:#3a0914;--wine-deep:#22040b;--wine-soft:#5c1427;--ivory:#f8f2e8;--gold:#b0812f;--gold-lt:#e2b65e;--gold-dk:#8a5f1c;--shine:#fbe6b0;--ink:#2a1a1d;--muted:#6b585b;--on-wine:#f0ddd4;
+  --display:'Cinzel','Trajan Pro',Georgia,serif;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',Helvetica,Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1)}
+*{box-sizing:border-box}
+:where(body,body *){margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:300 1rem/1.65 var(--sans);color:var(--ink);background:var(--ivory)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--wine)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3.2vw,2.3rem);letter-spacing:.06em;line-height:1.15;color:var(--wine);text-wrap:balance}
+.btn{display:inline-block;padding:13px 28px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold-lt);color:var(--gold-lt);
+  background:linear-gradient(var(--gold-lt),var(--gold-lt)) left/0 100% no-repeat;transition:background-size .45s var(--ease),color .3s}
+.btn:hover,.btn:focus-visible{background-size:100% 100%;color:var(--wine)}
+.btn.fill{background-color:var(--gold-lt);color:var(--wine);background-image:linear-gradient(var(--shine),var(--shine))}
+/* placeholder: replace each .ph with <img src="images/…" alt="…"> */
+.ph{background:#e9e2d0;display:flex;align-items:flex-end;padding:12px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#9a8b66}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(34,4,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(217,187,115,.25)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
+.brand{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:.14em;color:var(--gold-lt);text-decoration:none}
+header nav{display:flex;gap:28px;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase}
+header nav a{color:var(--on-wine);text-decoration:none;background:linear-gradient(var(--gold-lt),var(--gold-lt)) left bottom/0 1px no-repeat;padding-bottom:3px;transition:background-size .35s var(--ease),color .3s}
+header nav a:hover,header nav a:focus-visible{color:var(--gold-lt);background-size:100% 1px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:var(--on-wine);
+  background:linear-gradient(115deg,var(--wine-deep) 0%,var(--wine) 18%,var(--wine-soft) 30%,var(--wine-deep) 44%,var(--wine) 58%,#6d1a30 70%,var(--wine-deep) 84%,var(--wine) 100%) 0 0/300% 300%;
+  animation:silk 22s ease-in-out infinite alternate}
+@keyframes silk{to{background-position:100% 100%}}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center;padding-block:72px 80px}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1;letter-spacing:.04em;
+  color:var(--gold-lt);background:linear-gradient(100deg,var(--gold-dk) 0%,var(--gold-lt) 36%,var(--shine) 50%,var(--gold-lt) 64%,var(--gold-dk) 100%) 0 0/250% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 7s ease-in-out infinite,rise .9s 1.6s var(--ease) both}
+/* logo: layers built from the logo artwork, revealed in the same order as the logo video */
+.logo{position:relative;width:min(300px,72vw);aspect-ratio:720/840;margin-bottom:18px;animation:glow 4s 2.2s ease-in-out infinite}
+.logo img{position:absolute;inset:0;width:100%;height:100%;opacity:0;animation:lg .9s var(--ease) forwards}
+.logo .crown{animation-name:lgdrop;animation-delay:.1s}
+.logo .ring{animation-name:lgring;animation-duration:1.2s;animation-delay:.35s}
+.logo .mono{animation-name:lgblur;animation-duration:1.1s;animation-delay:.8s}
+.logo .eleg{animation-delay:1.25s}
+.logo .leaves{animation-delay:1.45s}
+.logo .since{animation-delay:1.7s}
+@keyframes lg{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes lgdrop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes lgring{from{opacity:0;transform:scale(.9) rotate(-12deg)}to{opacity:1;transform:none}}
+@keyframes lgblur{from{opacity:0;filter:blur(8px);transform:scale(1.06)}to{opacity:1;filter:none;transform:none}}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 0 rgba(251,230,176,0))}50%{filter:drop-shadow(0 0 14px rgba(251,230,176,.45))}}
+.hero .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.65rem);color:var(--gold-lt);margin:18px 0 14px;animation:rise .9s 1.8s var(--ease) both}
+.hero p.lead{max-width:430px;text-wrap:pretty;margin-bottom:32px;animation:rise .9s 1.95s var(--ease) both}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;animation:rise .9s 2.1s var(--ease) both}
+.hero-photo{aspect-ratio:4/5;max-height:500px;width:100%;max-width:400px;justify-self:center;background:var(--wine-soft);color:#c79aa2;padding:30px;
+  outline:1px solid var(--gold-lt);outline-offset:-14px;animation:fadein 1.4s .2s var(--ease) both}
+@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(-10px) rotate(-2deg)}50%{transform:translateY(10px) rotate(2deg)}}
+/* sparkles: four-point stars that twinkle, visible at rest */
+.spark{position:absolute;width:var(--z,12px);aspect-ratio:1;background:var(--shine);opacity:.55;pointer-events:none;
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);animation:twinkle 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.spark.g{background:var(--gold-lt)}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.5) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+
+/* scrolling band */
+.band{background:var(--wine-deep);border-block:1px solid rgba(217,187,115,.3);overflow:hidden;padding-block:14px}
+.band-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.band span{font-family:var(--display);font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;display:flex;align-items:center;gap:28px;padding-right:28px}
+.band i{width:9px;aspect-ratio:1;background:var(--gold-lt);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+section{padding-block:80px;position:relative}
+.floater{position:absolute;pointer-events:none;width:var(--w,80px);animation:float 6s ease-in-out infinite;animation-delay:var(--d,0s);opacity:.9}
+
+/* collections */
+#collections .head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:32px}
+#collections .head p{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--muted)}
+.cols{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.tile{display:block;width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.tile .frame{overflow:hidden;position:relative}
+.tile .ph{width:100%;aspect-ratio:1;transition:transform .7s var(--ease)}
+.tile .frame::after{content:"";position:absolute;inset:8px;border:1px solid var(--gold);opacity:0;transform:scale(1.04);transition:opacity .4s,transform .5s var(--ease)}
+.tile:hover .ph,.tile:focus-visible .ph{transform:scale(1.07)}
+.tile:hover .frame::after,.tile:focus-visible .frame::after{opacity:1;transform:none}
+.tile:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.tile h3{font-family:var(--display);font-weight:500;font-size:.98rem;letter-spacing:.08em;color:var(--wine);margin-top:14px}
+.tile small{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);transition:letter-spacing .4s var(--ease)}
+.tile:hover small{letter-spacing:.28em}
+.also{margin-top:28px;color:var(--muted);font-size:.95rem}
+
+/* story + visit */
+#visit{background:var(--wine);color:var(--on-wine);overflow:hidden}
+#visit h2{color:var(--gold-lt)}
+.visit{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.visit>*{min-width:0}
+.visit .pull{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.4vw,1.8rem);line-height:1.35;color:var(--shine);margin:22px 0 18px;padding-left:20px;border-left:1px solid var(--gold)}
+.panel{border:1px solid rgba(217,187,115,.45);padding:32px;display:grid;gap:20px;background:rgba(255,255,255,.02)}
+.panel dt{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lt)}
+.panel dd{color:#fbf1ea}
+.panel dd a{text-decoration:none;border-bottom:1px solid var(--gold)}
+table{border-collapse:collapse}
+td{padding-right:18px}
+
+footer{background:var(--wine-deep);color:#c2a2a8;font-size:.82rem;padding-block:22px;border-top:1px solid rgba(217,187,115,.2)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* gallery */
+dialog{width:min(1040px,calc(100% - 32px));max-height:calc(100% - 48px);margin:auto;border:1px solid var(--gold);background:var(--ivory);color:var(--ink);padding:0}
+dialog[open]{animation:pop .45s var(--ease)}
+dialog::backdrop{background:rgba(34,4,11,.85)}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.98)}}
+.dlg-head{position:sticky;top:0;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 24px;background:var(--wine)}
+.dlg-head h2{color:var(--gold-lt)}
+.dlg-head button{background:none;border:1px solid var(--gold-lt);color:var(--gold-lt);font:400 .75rem var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;cursor:pointer}
+.dlg-head button:hover,.dlg-head button:focus-visible{background:var(--gold-lt);color:var(--wine)}
+.designs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:24px}
+.designs figure{animation:rise .8s var(--ease) both;animation-delay:calc(var(--i) * 110ms + 150ms)}
+.designs .ph,.designs img{aspect-ratio:1;width:100%;object-fit:cover}
+.designs figcaption{font-family:var(--serif);font-size:1.05rem;margin-top:6px}
+
+/* phone-only bottom bar: WhatsApp + directions within thumb reach */
+.mbar{display:none;position:fixed;inset:auto 0 0;z-index:25;grid-template-columns:1fr 1fr;background:var(--wine-deep);border-top:1px solid rgba(217,187,115,.4);
+  padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));gap:10px}
+.mbar .btn{text-align:center;padding:14px 6px}
+
+/* scroll reveal (only when JS runs) */
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--rd,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero .wrap,.visit{grid-template-columns:1fr;gap:28px}
+  .hero .wrap{padding-block:48px 56px}
+  .hero-photo{max-width:none;aspect-ratio:4/3;max-height:320px}
+  .hero-text{text-align:center}
+  .logo{margin-inline:auto}
+  .hero p.lead{margin-inline:auto}
+  .hero .btns{display:grid;grid-template-columns:1fr 1fr}
+  .hero .btns .btn{text-align:center;padding-inline:8px}
+  section{padding-block:56px}
+  .tile:active .ph{transform:scale(1.04)}
+  dialog{width:100%;max-width:none;height:100%;max-height:none;border:0}
+  .dlg-head{padding:14px max(16px,env(safe-area-inset-left,0px)) 14px max(16px,env(safe-area-inset-right,0px));padding-top:max(14px,env(safe-area-inset-top,0px))}
+  .panel{padding:24px 20px}
+  .panel dd a{display:inline-block;padding-block:6px}
+  .mbar{display:grid}
+  footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .cols{grid-template-columns:repeat(2,1fr)}
+  .designs{grid-template-columns:repeat(2,1fr);padding:16px}
+  #collections .head{flex-direction:column;align-items:start}
+  header nav a:not(.call){display:none}
+  .floater{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  .logo img{opacity:1}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">NR Jewellers</a>
+    <nav aria-label="Main">
+      <a href="#collections">Collections</a>
+      <a href="#visit">Visit</a>
+      <a class="call" href="https://wa.me/919210487201" target="_blank" rel="noopener">Contact owner</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div aria-hidden="true">
+    <span class="spark g" style="top:10%;left:6%;--z:16px;--d:0s"></span>
+    <span class="spark" style="top:18%;left:44%;--z:10px;--d:.6s"></span>
+    <span class="spark" style="top:16%;left:90%;--z:20px;--d:1.4s"></span>
+    <span class="spark g" style="top:72%;left:48%;--z:12px;--d:2.1s"></span>
+    <span class="spark" style="top:30%;left:62%;--z:14px;--d:.3s"></span>
+    <span class="spark" style="top:82%;left:8%;--z:10px;--d:1.8s"></span>
+    <span class="spark g" style="top:66%;left:92%;--z:18px;--d:.9s"></span>
+    <span class="spark" style="top:88%;left:70%;--z:12px;--d:2.6s"></span>
+    <span class="spark g" style="top:42%;left:96%;--z:9px;--d:2.9s"></span>
+    <span class="spark" style="top:52%;left:2%;--z:11px;--d:.5s"></span>
+  </div>
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="logo" role="img" aria-label="NR Elegance Style logo, since 2005">
+        <img class="ring" src="images/logo/ring.png" alt="">
+        <img class="crown" src="images/logo/crown.png" alt="">
+        <img class="mono" src="images/logo/mono.png" alt="">
+        <img class="eleg" src="images/logo/eleg.png" alt="">
+        <img class="leaves" src="images/logo/leaves.png" alt="">
+        <img class="since" src="images/logo/since.png" alt="">
+      </div>
+      <h1>NR Jewellers</h1>
+      <p class="tag">Timeless beauty &amp; everyday elegance, since 2005</p>
+      <p class="lead">Gold jewellery for daily wear and for the days you'll remember. Visit our showroom at UTC Millennium Plaza, Sahibabad.</p>
+      <div class="btns">
+        <a class="btn fill" href="#collections">See collections</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=UTC+Millennium+Plaza+Shalimar+Garden+Extension+II+Sahibabad" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+    <div class="hero-photo ph" role="img" aria-label="Featured necklace photo (placeholder)">Featured necklace</div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="band-track">
+    <span>Necklace Sets <i></i> Rings <i></i> Earrings <i></i> Bangles <i></i> Mangalsutra <i></i> Pendants <i></i> Bracelets <i></i> Gold Coins <i></i> Piercing <i></i> Since 2005 <i></i></span>
+    <span>Necklace Sets <i></i> Rings <i></i> Earrings <i></i> Bangles <i></i> Mangalsutra <i></i> Pendants <i></i> Bracelets <i></i> Gold Coins <i></i> Piercing <i></i> Since 2005 <i></i></span>
+  </div>
+</div>
+
+<section id="collections">
+  <img class="floater" src="images/diamond.png" alt="" style="top:40px;right:4%;--w:90px">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>Choose your pick</h2>
+      <p>Tap a collection to see the designs</p>
+    </div>
+    <div class="cols">
+      <button class="tile rv" style="--rd:0.00s" type="button" data-cat="Necklace Sets"><div class="frame"><div class="ph">Photo</div></div><h3>Necklace Sets</h3><small>View designs</small></button>
+      <button class="tile rv" style="--rd:0.18s" type="button" data-cat="Rings"><div class="frame"><div class="ph">Photo</div></div><h3>Rings</h3><small>View designs</small></button>
+      <button class="tile rv" style="--rd:0.36s" type="button" data-cat="Earrings"><div class="frame"><div class="ph">Photo</div></div><h3>Earrings</h3><small>View designs</small></button>
+      <button class="tile rv" style="--rd:0.54s" type="button" data-cat="Bangles"><div class="frame"><div class="ph">Photo</div></div><h3>Bangles</h3><small>View designs</small></button>
+      <button class="tile rv" style="--rd:0.72s" type="button" data-cat="Mangalsutra"><div class="frame"><div class="ph">Photo</div></div><h3>Mangalsutra</h3><small>View designs</small></button>
+      <button class="tile rv" style="--rd:0.90s" type="button" data-cat="Pendants"><div class="frame"><div class="ph">Photo</div></div><h3>Pendants</h3><small>View designs</small></button>
+    </div>
+    <p class="also rv">Also in store: bracelets, jewellery sets, gold coins, ear and nose piercing, and lucky draw deals through the year.</p>
+  </div>
+</section>
+
+<section id="visit">
+  <div aria-hidden="true">
+    <span class="spark g" style="top:14%;left:46%;--z:12px;--d:.7s"></span>
+    <span class="spark" style="top:80%;left:4%;--z:14px;--d:1.9s"></span>
+    <span class="spark g" style="top:88%;left:56%;--z:10px;--d:2.7s"></span>
+  </div>
+  <img class="floater" src="images/diamond.png" alt="" style="bottom:36px;left:38%;--w:70px;--d:-2s">
+  <div class="wrap visit">
+    <div class="rv">
+      <h2>Our story</h2>
+      <p class="pull">It all began 20 years ago with a small shop and a big dream.</p>
+      <p>We're not just a jewellery store. We're a family with a love for timeless beauty and everyday elegance. Today we offer pieces that are perfect for daily wear, yet unique enough to stand out.</p>
+    </div>
+    <dl class="panel rv" style="--rd:.15s">
+      <div><dt>Address</dt><dd>Shop No. 45, UTC Millennium Plaza,<br>Shalimar Garden Extension II, Sahibabad,<br>Ghaziabad, Uttar Pradesh 201005</dd></div>
+      <div><dt>Phone &amp; WhatsApp</dt><dd><a href="https://wa.me/919210487201" target="_blank" rel="noopener">92104 87201</a> &nbsp;·&nbsp; <a href="https://wa.me/919312500167" target="_blank" rel="noopener">93125 00167</a></dd></div>
+      <div><dt>Hours</dt><dd><table>
+        <tr><td>Mon – Sat</td><td>10:00 AM – 8:00 PM</td></tr>
+        <tr><td>Sunday</td><td>11:00 AM – 7:00 PM</td></tr>
+      </table></dd></div>
+      <div><a class="btn" href="https://www.google.com/maps/search/?api=1&query=UTC+Millennium+Plaza+Shalimar+Garden+Extension+II+Sahibabad" target="_blank" rel="noopener">Open in Google Maps</a></div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 NR Jewellers, Sahibabad</span><span>Please visit the showroom to buy.</span></div>
+</footer>
+
+<nav class="mbar" aria-label="Quick contact">
+  <a class="btn fill" href="https://wa.me/919210487201" target="_blank" rel="noopener">WhatsApp us</a>
+  <a class="btn" href="https://www.google.com/maps/search/?api=1&query=UTC+Millennium+Plaza+Shalimar+Garden+Extension+II+Sahibabad" target="_blank" rel="noopener">Directions</a>
+</nav>
+
+<dialog id="gallery" aria-labelledby="gallery-title">
+  <div class="dlg-head"><h2 id="gallery-title"></h2><button type="button" id="gallery-close">Close</button></div>
+  <div class="designs" id="gallery-grid"></div>
+</dialog>
+
+<script>
+// Always open at the top: browsers and the preview otherwise restore the last scroll spot.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+// Add photo paths per collection, e.g. "Rings": ["images/rings/01.jpg", ...]. Empty lists show 12 placeholders.
+const designs = {"Necklace Sets": [], "Rings": [], "Earrings": [], "Bangles": [], "Mangalsutra": [], "Pendants": []};
+const dlg = document.getElementById('gallery'), grid = document.getElementById('gallery-grid');
+document.querySelectorAll('.tile').forEach(t => t.addEventListener('click', () => {
+  const cat = t.dataset.cat, imgs = designs[cat] || [];
+  document.getElementById('gallery-title').textContent = cat;
+  const list = imgs.length ? imgs : Array(12).fill(null);
+  grid.innerHTML = list.map((src, i) => `<figure style="--i:${i}">${src
+    ? `<img src="${src}" alt="${cat} design ${i + 1}" loading="lazy">`
+    : '<div class="ph">Photo</div>'}<figcaption>Design ${i + 1}</figcaption></figure>`).join('');
+  dlg.showModal();
+}));
+document.getElementById('gallery-close').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+// Reveal sections as they scroll into view; without IntersectionObserver everything simply stays visible.
+if ('IntersectionObserver' in window) {
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold: .2, rootMargin: "0px 0px -8% 0px"});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+}
+</script>
+</body>
+</html>
